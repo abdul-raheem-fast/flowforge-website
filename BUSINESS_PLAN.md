@@ -135,10 +135,10 @@ White-glove design, deployment, and maintenance of workflows. Includes monitorin
 
 | Role | Name | Responsibility |
 |------|------|----------------|
-| CEO & Founder | James Devries | Strategy, partnerships, fundraising |
-| CTO & Technical Lead | Sarah Kim | Architecture, security, engineering |
-| COO & Operations Manager | Michael Park | Delivery, support, process design |
-| CFO & Marketing Lead | Alexandra Lee | Finance, growth, brand |
+| CEO & Founder | M. Abdul Raheem (23L-0588) | Strategy, partnerships, fundraising |
+| CTO & Technical Lead | M. Umar Shoaib (23L-0934) | Architecture, security, engineering |
+| COO & Operations Manager | Ahmad Rasheed (23L-0786) | Delivery, support, process design |
+| CFO & Marketing Lead | Nouman Hassan (23L-0782) | Finance, growth, brand |
 
 ### 8.2 Employees (Beyond Founders)
 
