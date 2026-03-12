@@ -3,6 +3,8 @@
 FlowForge is a simulated B2B workflow automation startup created for **PPiT Assignment 1**.  
 This repository contains both the **marketing website** and the **formal business plan**.
 
+**Live site:** [https://website-gamma-sooty-40.vercel.app](https://website-gamma-sooty-40.vercel.app)
+
 ---
 
 ## Project Overview
@@ -12,7 +14,7 @@ This repository contains both the **marketing website** and the **formal busines
 - **Type:** SaaS workflow automation platform for small and mid-size businesses  
 - **Deliverables in this repo:**
   - `website/` — Multi-page marketing site (Home, Services, About, Contact)
-  - `BUSINESS_PLAN.md` — Full business plan (to be exported to PDF)
+  - `BUSINESS_PLAN.md` — Full business plan (export to PDF for submission)
 
 The website follows **HCI principles**, **clean information architecture**, and a modern, responsive layout suitable for desktop and mobile.
 
@@ -46,14 +48,12 @@ Then open `http://localhost:3000` in your browser.
 
 ## Deploying to Vercel
 
-1. Push this project to GitHub (repository: `flowforge-website`).
-2. Go to [`https://vercel.com`](https://vercel.com) and sign in with your account.
-3. Click **Add New → Project** and import the `flowforge-website` repository.
-4. When asked for the **root directory**, select `website/` (or keep `rootDirectory: "website"` in `vercel.json`).
-5. Click **Deploy** and wait for the build to finish.
-6. Copy the generated URL (for example: `https://flowforge-website.vercel.app`).
+1. Ensure the project is pushed to GitHub (repository: [flowforge-website](https://github.com/abdul-raheem-fast/flowforge-website)).
+2. Run `npx vercel login` in a terminal and complete the browser sign-in.
+3. From the `website/` folder, run `npx vercel --yes` to deploy.
+4. The live URL is generated (e.g. `https://website-gamma-sooty-40.vercel.app`).
 
-Update the **Website** section in `BUSINESS_PLAN.md` with the final live URL before exporting to PDF.
+Alternatively, use the Vercel dashboard: **Add New → Project** → import `flowforge-website` → set root directory to `website/` → **Deploy**.
 
 ---
 
