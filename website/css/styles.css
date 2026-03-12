@@ -299,7 +299,7 @@ main {
   flex: 1;
 }
 
-/* ===== Hero Section (Dark) ===== */
+/* ===== Hero Section (Dark — default) ===== */
 .hero {
   background: var(--gradient-hero);
   position: relative;
@@ -327,6 +327,95 @@ main {
   height: 200px;
   background: linear-gradient(to top, var(--color-bg) 0%, transparent 100%);
   z-index: 2;
+}
+
+/* ===== Hero Section (Light — original style) ===== */
+.hero.hero-light {
+  background: var(--color-bg);
+  min-height: auto;
+  padding: 0;
+}
+
+.hero.hero-light::before {
+  background: radial-gradient(ellipse at 80% 30%, rgba(13, 148, 136, 0.08) 0%, transparent 60%),
+              radial-gradient(ellipse at 20% 70%, rgba(20, 184, 166, 0.06) 0%, transparent 60%);
+  animation: none;
+}
+
+.hero.hero-light::after {
+  display: none;
+}
+
+.hero.hero-light .hero-content h1 {
+  color: var(--color-text);
+}
+
+.hero.hero-light .hero-subtitle {
+  color: var(--color-text-muted);
+}
+
+.hero.hero-light .hero-badge {
+  background: rgba(13, 148, 136, 0.08);
+  border-color: rgba(13, 148, 136, 0.15);
+  color: var(--color-accent-dark);
+}
+
+.hero.hero-light .hero-badge .badge-dot {
+  background: var(--color-accent);
+}
+
+.hero.hero-light .btn-secondary {
+  background: var(--color-surface);
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  backdrop-filter: none;
+}
+
+.hero.hero-light .btn-secondary:hover {
+  background: rgba(13, 148, 136, 0.06);
+  color: var(--color-accent-dark);
+  border-color: var(--color-accent-dark);
+}
+
+.hero.hero-light .hero-card {
+  background: var(--color-surface);
+  border-color: var(--color-border);
+  box-shadow: var(--shadow-xl);
+}
+
+.hero.hero-light .hero-card:hover {
+  transform: translateY(-8px) rotate(0.5deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1), var(--shadow-glow);
+}
+
+.hero.hero-light .flow-preview {
+  background: linear-gradient(165deg, #f0fdfa 0%, #ecfdf5 35%, #f8fafc 100%);
+}
+
+.hero.hero-light .browser-bar {
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom-color: rgba(13, 148, 136, 0.12);
+}
+
+.hero.hero-light .bar-title {
+  color: var(--color-text-muted);
+}
+
+.hero.hero-light .flow-block {
+  background: white;
+  border-color: var(--color-border);
+  color: var(--color-text);
+  box-shadow: var(--shadow);
+}
+
+.hero.hero-light .hero-card:hover .flow-block {
+  background: white;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero.hero-light .hero-visual::before,
+.hero.hero-light .hero-visual::after {
+  display: none;
 }
 
 .hero-inner {

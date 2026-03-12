@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FlowForge — Business Plan | PPiT Assignment 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Print & Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --accent:       #0d9488;
+      --accent-light: #14b8a6;
+      --accent-dark:  #047857;
+      --dark:         #0a0e1a;
+      --navy:         #0f172a;
+      --text:         #1e293b;
+      --muted:        #475569;
+      --border:       #e2e8f0;
+      --bg:           #f8fafc;
+      --white:        #ffffff;
+      --font-sans:    'DM Sans', system-ui, sans-serif;
+      --font-serif:   'DM Serif Display', Georgia, serif;
+    }
+
+    html { font-size: 11pt; }
+
+    body {
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+    }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      html { font-size: 10pt; }
+      .page-break { page-break-before: always; }
+      .no-break { page-break-inside: avoid; }
+      a { color: var(--accent) !important; }
+    }
+
+    /* ===== Cover Page ===== */
+    .cover {
+      width: 100%;
+      min-height: 100vh;
+      background: linear-gradient(150deg, #0a0e1a 0%, #0d1b2a 40%, #111827 70%, #0a0e1a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px 40px;
+    }
+
+    .cover::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 60%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(13,148,136,0.15) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 50%;
+      height: 60%;
+      background: radial-gradient(ellipse, rgba(20,184,166,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cover-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 700px;
+    }
+
+    .cover-logo {
+      margin: 0 auto 36px;
+    }
+
+    .cover-logo svg {
+      width: 200px;
+      height: 50px;
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 18px;
+      background: rgba(13,148,136,0.12);
+      border: 1px solid rgba(13,148,136,0.25);
+      border-radius: 100px;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--accent-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .cover-title {
+      font-family: var(--font-serif);
+      font-size: 42pt;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .cover-title span {
+      background: linear-gradient(135deg, var(--accent-light) 0%, #34d399 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cover-slogan {
+      font-size: 14pt;
+      color: rgba(255,255,255,0.5);
+      font-style: italic;
+      margin-bottom: 48px;
+      letter-spacing: 0.04em;
+    }
+
+    .cover-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 2px;
+      margin: 0 auto 40px;
+    }
+
+    .cover-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      text-align: left;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 28px 32px;
+      backdrop-filter: blur(10px);
+      margin-bottom: 40px;
+    }
+
+    .cover-meta-item label {
+      display: block;
+      font-size: 8pt;
+      color: rgba(255,255,255,0.35);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 4px;
+    }
+
+    .cover-meta-item p {
+      font-size: 10pt;
+      color: rgba(255,255,255,0.8);
+      font-weight: 500;
+    }
+
+    .cover-team-list {
+      margin-top: 4px;
+    }
+
+    .cover-team-list p {
+      font-size: 9.5pt;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+    }
+
+    .cover-url {
+      font-size: 10pt;
+      color: var(--accent-light);
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    .cover-footer {
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 8.5pt;
+      color: rgba(255,255,255,0.2);
+    }
+
+    /* ===== Content Pages ===== */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 48px;
+    }
+
+    /* ===== Section Heading ===== */
+    .section-num {
+      display: inline-block;
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 6px;
+    }
+
+    h1.section-h {
+      font-family: var(--font-serif);
+      font-size: 26pt;
+      color: var(--navy);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--border);
+      position: relative;
+    }
+
+    h1.section-h::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    h2.sub-h {
+      font-family: var(--font-serif);
+      font-size: 16pt;
+      color: var(--navy);
+      margin: 28px 0 12px;
+      letter-spacing: -0.01em;
+    }
+
+    h3.sub-sub-h {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--text);
+      margin: 20px 0 8px;
+    }
+
+    p { margin-bottom: 12px; color: var(--muted); }
+
+    ul, ol {
+      margin: 8px 0 14px 20px;
+      color: var(--muted);
+    }
+
+    li { margin-bottom: 5px; line-height: 1.6; }
+
+    strong { color: var(--text); }
+
+    /* ===== Info Box ===== */
+    .info-box {
+      background: linear-gradient(135deg, #f0fdfa 0%, #ecfdf5 100%);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin: 16px 0 20px;
+    }
+
+    .info-box p { color: var(--text); margin-bottom: 0; }
+
+    /* ===== Table ===== */
+    .tbl {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      font-size: 10pt;
+    }
+
+    .tbl th {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: white;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+      font-size: 9.5pt;
+    }
+
+    .tbl th:first-child { border-radius: 8px 0 0 0; }
+    .tbl th:last-child  { border-radius: 0 8px 0 0; }
+
+    .tbl td {
+      padding: 9px 14px;
+      border-bottom: 1px solid var(--border);
+      color: var(--muted);
+      vertical-align: top;
+    }
+
+    .tbl tr:nth-child(even) td { background: var(--bg); }
+    .tbl tr:last-child td { border-bottom: none; }
+    .tbl td strong { color: var(--text); }
+
+    /* ===== Pricing Cards ===== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 16px 0 24px;
+    }
+
+    .pricing-card {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 14px;
+      text-align: center;
+    }
+
+    .pricing-card.featured {
+      border-color: var(--accent);
+      background: linear-gradient(160deg, #f0fdfa 0%, var(--white) 100%);
+    }
+
+    .pricing-tier {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .pricing-price {
+      font-family: var(--font-serif);
+      font-size: 20pt;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .pricing-price sub {
+      font-size: 10pt;
+      font-family: var(--font-sans);
+    }
+
+    .pricing-desc {
+      font-size: 8.5pt;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ===== Team Cards ===== */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin: 16px 0 24px;
+    }
+
+    .team-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+    }
+
+    .team-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      font-size: 14pt;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .team-info h4 {
+      font-size: 11pt;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .team-info .team-role {
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .team-info p {
+      font-size: 9pt;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* ===== Org Chart ===== */
+    .org-chart {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 16px 0 24px;
+      font-size: 9.5pt;
+    }
+
+    .org-ceo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .org-box {
+      display: inline-block;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 9.5pt;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+    }
+
+    .org-name { font-size: 8.5pt; font-weight: 400; opacity: 0.85; }
+
+    .org-branches {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .org-branch {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .org-branch-head {
+      padding: 8px 12px;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: white;
+      font-size: 8.5pt;
+      font-weight: 600;
+    }
+
+    .org-branch-head span {
+      display: block;
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.5);
+      font-weight: 400;
+    }
+
+    .org-branch-subs {
+      padding: 10px 12px;
+    }
+
+    .org-branch-subs p {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin-bottom: 4px;
+      padding-left: 10px;
+      border-left: 2px solid var(--accent-light);
+    }
+
+    /* ===== Tech Stack Badges ===== */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 16px 0 24px;
+    }
+
+    .tech-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg);
+    }
+
+    .tech-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 5px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tech-item-text strong {
+      display: block;
+      font-size: 9pt;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .tech-item-text p {
+      font-size: 8.5pt;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ===== Workflow Steps ===== */
+    .workflow {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 16px 0 24px;
+    }
+
+    .workflow-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .workflow-step:last-child { border-bottom: none; }
+
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      font-weight: 700;
+      font-size: 11pt;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content strong {
+      display: block;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 3px;
+    }
+
+    .step-content p { margin: 0; font-size: 9.5pt; color: var(--muted); }
+
+    /* ===== Future Growth ===== */
+    .growth-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 16px 0 24px;
+    }
+
+    .growth-card {
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .growth-head {
+      padding: 10px 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: white;
+      font-weight: 700;
+      font-size: 9.5pt;
+    }
+
+    .growth-body {
+      padding: 12px 14px;
+    }
+
+    .growth-body ul {
+      margin: 0;
+      padding-left: 14px;
+    }
+
+    .growth-body li { font-size: 9pt; color: var(--muted); margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================ -->
+<!--  COVER PAGE                                                   -->
+<!-- ============================================================ -->
+<div class="cover">
+  <div class="cover-inner">
+    <!-- Logo -->
+    <div class="cover-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 60" width="260" height="60">
+        <defs>
+          <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0d9488"/>
+            <stop offset="100%" style="stop-color:#047857"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="5" width="50" height="50" rx="12" fill="url(#g)"/>
+        <circle cx="17" cy="30" r="5" fill="white"/>
+        <circle cx="37" cy="30" r="5" fill="white"/>
+        <path fill="none" stroke="white" stroke-width="3" stroke-linecap="round" d="M22 30h10"/>
+        <path fill="white" d="M35 24l8 6-8 6z"/>
+        <text x="64" y="42" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#ffffff" letter-spacing="-0.5">FlowForge</text>
+      </svg>
+    </div>
+
+    <div class="cover-badge">PPiT Assignment 1 — BCS-6J</div>
+
+    <h1 class="cover-title">Business <span>Plan</span></h1>
+    <p class="cover-slogan">Streamline. Automate. Scale.</p>
+    <div class="cover-divider"></div>
+
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <label>Group Members</label>
+        <div class="cover-team-list">
+          <p>M. Abdul Raheem — 23L-0588</p>
+          <p>M. Umar Shoaib — 23L-0934</p>
+          <p>Ahmad Rasheed — 23L-0786</p>
+          <p>Nouman Hassan — 23L-0782</p>
+        </div>
+      </div>
+      <div class="cover-meta-item">
+        <label>Course</label>
+        <p>Principles &amp; Practice of IT</p>
+        <label style="margin-top:14px;">Section</label>
+        <p>BCS-6J</p>
+        <label style="margin-top:14px;">Date</label>
+        <p>March 2026</p>
+      </div>
+      <div class="cover-meta-item" style="grid-column:1/-1;">
+        <label>Live Website</label>
+        <a class="cover-url" href="https://flowforge-website-orpin.vercel.app">https://flowforge-website-orpin.vercel.app</a>
+      </div>
+    </div>
+  </div>
+  <div class="cover-footer">FlowForge — Confidential Business Plan &nbsp;|&nbsp; FAST-NUCES Lahore</div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 1 — COMPANY OVERVIEW                                -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 01</span>
+  <h1 class="section-h">Company Overview</h1>
+
+  <div class="info-box">
+    <p><strong>FlowForge</strong> is a B2B SaaS workflow automation platform that helps small and mid-size businesses connect their tools, eliminate manual work, and scale operations without hiring large technical teams.</p>
+  </div>
+
+  <h2 class="sub-h">1.1 Vision</h2>
+  <p>FlowForge aims to become the default platform for workflow automation among small and mid-size businesses, enabling them to operate at enterprise scale without enterprise overhead.</p>
+
+  <h2 class="sub-h">1.2 Mission</h2>
+  <p>To connect tools, eliminate manual work, and help teams focus on high-value tasks by providing reliable, accessible workflow automation that any team can deploy — without custom development.</p>
+
+  <h2 class="sub-h">1.3 Business Idea</h2>
+  <p>FlowForge offers an integration hub, a visual workflow builder, and managed automation services. Companies can connect CRM, support, billing, and productivity tools into unified, automated workflows — all through a no-code interface.</p>
+
+  <h2 class="sub-h">1.4 Company at a Glance</h2>
+  <table class="tbl no-break">
+    <tr><th>Attribute</th><th>Detail</th></tr>
+    <tr><td><strong>Company Name</strong></td><td>FlowForge</td></tr>
+    <tr><td><strong>Slogan</strong></td><td>Streamline. Automate. Scale.</td></tr>
+    <tr><td><strong>Type</strong></td><td>B2B SaaS</td></tr>
+    <tr><td><strong>Founded</strong></td><td>2024</td></tr>
+    <tr><td><strong>Headquarters</strong></td><td>FAST-NUCES, Lahore, Pakistan</td></tr>
+    <tr><td><strong>Website</strong></td><td><a href="https://flowforge-website-orpin.vercel.app">flowforge-website-orpin.vercel.app</a></td></tr>
+    <tr><td><strong>Hosting Platform</strong></td><td>Vercel (Production)</td></tr>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 2 — PROBLEM STATEMENT                               -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 02</span>
+  <h1 class="section-h">Problem Statement</h1>
+
+  <p>Small and mid-size companies rely on multiple SaaS tools — Salesforce, Zendesk, Slack, QuickBooks, HubSpot — that do not natively integrate well. Teams are forced to manually copy data between systems, causing severe operational drag.</p>
+
+  <h2 class="sub-h">2.1 Core Pain Points</h2>
+  <table class="tbl no-break">
+    <tr><th>Problem</th><th>Impact</th></tr>
+    <tr><td><strong>Time Loss</strong></td><td>Teams spend hours on repetitive copy-paste and status updates instead of value-adding work</td></tr>
+    <tr><td><strong>Human Errors</strong></td><td>Manual data entry causes mistakes, missed follow-ups, and flawed reporting</td></tr>
+    <tr><td><strong>Operational Friction</strong></td><td>Poor integration slows onboarding, support resolution, and sales processes</td></tr>
+    <tr><td><strong>Scaling Limits</strong></td><td>Manual processes do not scale — headcount must grow linearly with workload</td></tr>
+    <tr><td><strong>Tool Complexity</strong></td><td>Enterprise automation tools (Workato, MuleSoft) require dedicated IT staff and large budgets</td></tr>
+  </table>
+
+  <h2 class="sub-h">2.2 The Gap</h2>
+  <p>Most workflow automation tools are targeted at large enterprises or require technical staff to implement. Small and mid-size businesses lack the budget and in-house expertise for complex integrations. <strong>FlowForge addresses this gap</strong> by offering simple, configurable automation without custom code — at SMB-friendly pricing.</p>
+
+  <div class="info-box">
+    <p>📊 <strong>Market Opportunity:</strong> The global workflow automation market is projected to exceed $26B by 2027 (CAGR 23%). SMBs represent the fastest-growing segment, yet are the most underserved by existing solutions.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 3 — PRODUCTS & SERVICES                             -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 03</span>
+  <h1 class="section-h">Products &amp; Services</h1>
+
+  <table class="tbl">
+    <tr>
+      <th>Service</th>
+      <th>Description</th>
+      <th>Key Features</th>
+    </tr>
+    <tr>
+      <td><strong>Workflow Automation Platform</strong></td>
+      <td>Visual drag-and-drop builder for triggers, conditions, and actions. 500+ app integrations. No coding required.</td>
+      <td>Real-time execution, branching logic, error handling, version history</td>
+    </tr>
+    <tr>
+      <td><strong>Integration Hub</strong></td>
+      <td>Central connector layer for CRM, support, billing, HR, and productivity tools with REST API for custom connections.</td>
+      <td>Pre-built connectors, OAuth 2.0, webhook support, data mapping</td>
+    </tr>
+    <tr>
+      <td><strong>Process Optimization</strong></td>
+      <td>Consulting service: our team maps current workflows, identifies bottlenecks, and proposes automation with ROI estimates.</td>
+      <td>Process audit, bottleneck analysis, ROI modeling, roadmap</td>
+    </tr>
+    <tr>
+      <td><strong>Managed Automation</strong></td>
+      <td>White-glove design, deployment, and maintenance of workflows. Includes 24/7 monitoring and incident response.</td>
+      <td>Dedicated CSM, SLA guarantees, quarterly reviews, monitoring</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 4 — TARGET MARKET                                   -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 04</span>
+  <h1 class="section-h">Target Market &amp; Customer Segments</h1>
+
+  <table class="tbl">
+    <tr><th>Segment</th><th>Description</th><th>Size Estimate</th></tr>
+    <tr>
+      <td><strong>Primary — SMBs</strong></td>
+      <td>50–500 employees with multiple disconnected SaaS tools and ops/support staff</td>
+      <td>200,000+ companies</td>
+    </tr>
+    <tr>
+      <td><strong>Secondary — Startups</strong></td>
+      <td>10–50 employees scaling operations rapidly, needing automation without engineering overhead</td>
+      <td>500,000+ companies</td>
+    </tr>
+    <tr>
+      <td><strong>Vertical Focus</strong></td>
+      <td>E-commerce, professional services, SaaS companies, healthcare administration</td>
+      <td>Combined TAM $26B+</td>
+    </tr>
+  </table>
+
+  <h2 class="sub-h">4.1 Ideal Customer Profile (ICP)</h2>
+  <div class="info-box">
+    <p>Mid-market companies with <strong>2+ disconnected systems</strong>, dedicated ops or support staff, monthly SaaS spend above $5,000, and a need to improve efficiency <strong>without hiring large technical teams</strong>. Decision maker is typically a VP of Operations, Head of Customer Success, or CTO.</p>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 5 — BUSINESS MODEL & REVENUE                        -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 05</span>
+  <h1 class="section-h">Business Model &amp; Revenue Strategy</h1>
+
+  <h2 class="sub-h">5.1 Revenue Streams</h2>
+  <ul>
+    <li><strong>Platform Subscription</strong> — Base + usage-based pricing (automations, integrations, monthly task volume)</li>
+    <li><strong>Professional Services</strong> — One-time or retainer consulting for process optimization and workflow design</li>
+    <li><strong>Managed Automation</strong> — Monthly fee per workflow set or per user for fully managed deployments</li>
+  </ul>
+
+  <h2 class="sub-h">5.2 Pricing Plans</h2>
+  <div class="pricing-grid no-break">
+    <div class="pricing-card">
+      <div class="pricing-tier">Starter</div>
+      <div class="pricing-price">$99<sub>/mo</sub></div>
+      <div class="pricing-desc">5 workflows · 3 integrations · Community support</div>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-tier">Growth ★</div>
+      <div class="pricing-price">$299<sub>/mo</sub></div>
+      <div class="pricing-desc">25 workflows · 15 integrations · Email support</div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Scale</div>
+      <div class="pricing-price">$799<sub>/mo</sub></div>
+      <div class="pricing-desc">Unlimited workflows · All integrations · Priority support</div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-tier">Enterprise</div>
+      <div class="pricing-price">Custom</div>
+      <div class="pricing-desc">Dedicated support · SLAs · On-premise option</div>
+    </div>
+  </div>
+
+  <h2 class="sub-h">5.3 Year 1 Revenue Projections</h2>
+  <table class="tbl no-break">
+    <tr><th>Quarter</th><th>Customers</th><th>Avg. MRR/Customer</th><th>MRR</th></tr>
+    <tr><td>Q1</td><td>40</td><td>$250</td><td>$10,000</td></tr>
+    <tr><td>Q2</td><td>120</td><td>$280</td><td>$33,600</td></tr>
+    <tr><td>Q3</td><td>280</td><td>$310</td><td>$86,800</td></tr>
+    <tr><td>Q4</td><td>500</td><td>$340</td><td>$170,000</td></tr>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 6 — TECHNOLOGY STACK                                -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 06</span>
+  <h1 class="section-h">Technology Stack</h1>
+
+  <div class="tech-grid">
+    <div class="tech-item">
+      <span class="tech-badge">Frontend</span>
+      <div class="tech-item-text">
+        <strong>React + TypeScript</strong>
+        <p>Component-based UI for the workflow builder. TypeScript ensures type safety in complex workflow logic.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Backend</span>
+      <div class="tech-item-text">
+        <strong>Node.js / Express</strong>
+        <p>Fast, non-blocking API server handling workflow orchestration, auth, and third-party API calls.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Database</span>
+      <div class="tech-item-text">
+        <strong>PostgreSQL</strong>
+        <p>Relational DB for structured user, workflow, and integration data. ACID compliance ensures reliability.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Queue</span>
+      <div class="tech-item-text">
+        <strong>Redis + BullMQ</strong>
+        <p>Job queue for asynchronous workflow execution. Handles retries, delays, and rate limiting per API.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Cloud</span>
+      <div class="tech-item-text">
+        <strong>AWS (EC2, S3, RDS)</strong>
+        <p>Scalable cloud infrastructure. Auto-scaling groups for API servers, S3 for file storage, RDS for managed DB.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">CDN</span>
+      <div class="tech-item-text">
+        <strong>CloudFront / Vercel</strong>
+        <p>Static asset delivery with global edge nodes. Vercel hosts the public website with zero-config deployments.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Payments</span>
+      <div class="tech-item-text">
+        <strong>Stripe</strong>
+        <p>Handles billing, subscriptions, usage-based pricing, invoicing, and payment methods with PCI compliance.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Analytics</span>
+      <div class="tech-item-text">
+        <strong>PostHog</strong>
+        <p>Open-source product analytics for tracking usage funnels, feature adoption, and user behavior in-product.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Monitoring</span>
+      <div class="tech-item-text">
+        <strong>Datadog</strong>
+        <p>APM, real-time logs, alerting, and dashboards. Ensures 99.9% uptime with instant incident detection.</p>
+      </div>
+    </div>
+    <div class="tech-item">
+      <span class="tech-badge">Auth</span>
+      <div class="tech-item-text">
+        <strong>Auth0 / JWT</strong>
+        <p>Industry-standard authentication with SSO, multi-factor auth, and OAuth 2.0 for integration connections.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 7 — MARKETING & SALES                               -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 07</span>
+  <h1 class="section-h">Marketing &amp; Sales Strategy</h1>
+
+  <h2 class="sub-h">7.1 Inbound Marketing</h2>
+  <ul>
+    <li><strong>SEO Content:</strong> Blog guides on workflow automation, integration tutorials, and SMB productivity tips targeting 50+ keywords</li>
+    <li><strong>Free Trial:</strong> 14-day fully featured trial with guided onboarding to maximize activation rate</li>
+    <li><strong>Case Studies:</strong> Published ROI reports from customers demonstrating time saved and error reduction</li>
+    <li><strong>YouTube Channel:</strong> Video walkthroughs of common workflow templates (CRM sync, support routing, etc.)</li>
+  </ul>
+
+  <h2 class="sub-h">7.2 Outbound Sales</h2>
+  <ul>
+    <li><strong>Cold Outreach:</strong> Targeted emails and LinkedIn DMs to Ops Leaders, Heads of CS, and CTOs at ICP accounts</li>
+    <li><strong>Partner Programs:</strong> White-label and referral partnerships with CRM and support software vendors</li>
+    <li><strong>Event Marketing:</strong> Sponsorships at SaaS and operations-focused conferences</li>
+  </ul>
+
+  <h2 class="sub-h">7.3 Sales Motion by Tier</h2>
+  <table class="tbl no-break">
+    <tr><th>Tier</th><th>Motion</th><th>Avg. Sales Cycle</th></tr>
+    <tr><td>Starter &amp; Growth</td><td>Self-serve via website — no sales touch required</td><td>Instant (web signup)</td></tr>
+    <tr><td>Scale</td><td>SDR + AE outreach, demo call, 30-day trial</td><td>2–4 weeks</td></tr>
+    <tr><td>Enterprise</td><td>Account-based selling, security/legal review, custom SLA</td><td>2–3 months</td></tr>
+  </table>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 8 — COMPANY STRUCTURE & ROLES                       -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 08</span>
+  <h1 class="section-h">Company Structure &amp; Employee Roles</h1>
+
+  <h2 class="sub-h">8.1 Founding Team</h2>
+  <div class="team-grid no-break">
+    <div class="team-card">
+      <div class="team-avatar">AR</div>
+      <div class="team-info">
+        <h4>M. Abdul Raheem</h4>
+        <p class="team-role">CEO &amp; Founder — 23L-0588</p>
+        <p>Responsible for overall strategy, investor relations, key partnerships, and company vision. Sets OKRs and leads executive decision-making.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">US</div>
+      <div class="team-info">
+        <h4>M. Umar Shoaib</h4>
+        <p class="team-role">CTO &amp; Technical Lead — 23L-0934</p>
+        <p>Owns platform architecture, engineering culture, system security, and technical roadmap. Leads the engineering and product teams.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">AR</div>
+      <div class="team-info">
+        <h4>Ahmad Rasheed</h4>
+        <p class="team-role">COO &amp; Operations Manager — 23L-0786</p>
+        <p>Manages delivery quality, customer support operations, process design, and inter-department coordination.</p>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">NH</div>
+      <div class="team-info">
+        <h4>Nouman Hassan</h4>
+        <p class="team-role">CFO &amp; Marketing Lead — 23L-0782</p>
+        <p>Controls financial planning, budget allocation, brand strategy, and go-to-market execution across all channels.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sub-h">8.2 Employees Beyond Founders</h2>
+  <table class="tbl">
+    <tr>
+      <th>Role</th>
+      <th>Responsibilities</th>
+      <th>Required Skills</th>
+    </tr>
+    <tr>
+      <td><strong>Software Engineer (×3)</strong></td>
+      <td>Build and maintain platform features, integration connectors, and internal tooling</td>
+      <td>Node.js, React, TypeScript, PostgreSQL, REST APIs</td>
+    </tr>
+    <tr>
+      <td><strong>Solutions Architect</strong></td>
+      <td>Design custom integrations and complex workflow architectures for enterprise customers</td>
+      <td>API design, workflow logic, system design, customer-facing consulting</td>
+    </tr>
+    <tr>
+      <td><strong>UI/UX Designer</strong></td>
+      <td>Design the workflow builder interface, onboarding flows, and marketing site</td>
+      <td>Figma, user research, interaction design, accessibility</td>
+    </tr>
+    <tr>
+      <td><strong>Sales Executive (×2)</strong></td>
+      <td>Handle prospecting, discovery calls, product demos, and closing for Growth/Scale tiers</td>
+      <td>B2B SaaS sales, CRM tools, demo delivery, negotiation</td>
+    </tr>
+    <tr>
+      <td><strong>Customer Success Manager</strong></td>
+      <td>Onboarding, adoption coaching, renewal management, and upsell identification</td>
+      <td>Product expertise, account management, support tools</td>
+    </tr>
+    <tr>
+      <td><strong>Customer Support Specialist</strong></td>
+      <td>Handle Tier-1 tickets, create help docs, escalate to engineering when needed</td>
+      <td>Zendesk, workflow knowledge, clear written communication</td>
+    </tr>
+    <tr>
+      <td><strong>Data Analyst</strong></td>
+      <td>Product usage analytics, revenue reporting, customer health scoring</td>
+      <td>SQL, PostHog, Metabase, data modeling, dashboarding</td>
+    </tr>
+  </table>
+
+  <h2 class="sub-h">8.3 Organizational Structure</h2>
+  <div class="org-chart no-break">
+    <div class="org-ceo">
+      <div class="org-box">
+        CEO — M. Abdul Raheem (23L-0588)
+        <span class="org-name">Strategy · Partnerships · Vision</span>
+      </div>
+    </div>
+    <div class="org-branches">
+      <div class="org-branch">
+        <div class="org-branch-head">
+          CTO — M. Umar Shoaib
+          <span>23L-0934 · Engineering &amp; Product</span>
+        </div>
+        <div class="org-branch-subs">
+          <p>Software Engineers (×3)</p>
+          <p>Solutions Architect</p>
+          <p>UI/UX Designer</p>
+        </div>
+      </div>
+      <div class="org-branch">
+        <div class="org-branch-head">
+          COO — Ahmad Rasheed
+          <span>23L-0786 · Operations &amp; Support</span>
+        </div>
+        <div class="org-branch-subs">
+          <p>Customer Success Manager</p>
+          <p>Customer Support Specialist</p>
+        </div>
+      </div>
+      <div class="org-branch">
+        <div class="org-branch-head">
+          CFO — Nouman Hassan
+          <span>23L-0782 · Finance &amp; Marketing</span>
+        </div>
+        <div class="org-branch-subs">
+          <p>Sales Executives (×2)</p>
+          <p>Data Analyst</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 9 — OPERATIONAL WORKFLOW                            -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 09</span>
+  <h1 class="section-h">Operational Workflow</h1>
+
+  <p>The FlowForge customer lifecycle follows a structured 6-stage workflow from initial lead generation through renewal and expansion:</p>
+
+  <div class="workflow">
+    <div class="workflow-step no-break">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <strong>Lead Generation</strong>
+        <p>Inbound via website, SEO content, paid ads, or outbound SDR prospecting. Leads captured in CRM (HubSpot) and scored by fit and intent signals.</p>
+      </div>
+    </div>
+    <div class="workflow-step no-break">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <strong>Qualify</strong>
+        <p>Sales or Customer Success Manager runs a discovery call to align with ICP criteria — team size, tools used, pain points, and budget. Non-ICP leads are routed to self-serve.</p>
+      </div>
+    </div>
+    <div class="workflow-step no-break">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <strong>Onboard</strong>
+        <p>ICP customers get a guided setup session or fully managed implementation (Managed Automation tier). Integrations connected, first workflow deployed within 48 hours.</p>
+      </div>
+    </div>
+    <div class="workflow-step no-break">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <strong>Adopt</strong>
+        <p>CSM provides training, documentation, and 30/60/90-day success milestones. Usage tracked via PostHog — low adoption triggers proactive CSM outreach.</p>
+      </div>
+    </div>
+    <div class="workflow-step no-break">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <strong>Support</strong>
+        <p>Tiered: Tier 1 (Support Specialist → help docs), Tier 2 (Solutions Architect → complex issues) Tier 3 (Engineering → bugs/outages). Target response SLA: &lt;4 hours.</p>
+      </div>
+    </div>
+    <div class="workflow-step no-break">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <strong>Renew &amp; Expand</strong>
+        <p>Quarterly business reviews identify upsell opportunities (additional integrations, upgraded plan, managed services). Renewal managed 60 days before contract end.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!--  SECTION 10 — FUTURE GROWTH & SCALABILITY                   -->
+<!-- ============================================================ -->
+<div class="content page-break">
+  <span class="section-num">Section 10</span>
+  <h1 class="section-h">Future Growth &amp; Scalability</h1>
+
+  <div class="growth-grid no-break">
+    <div class="growth-card">
+      <div class="growth-head">Near Term · 0–12 Months</div>
+      <div class="growth-body">
+        <ul>
+          <li>Reach 500 paying customers</li>
+          <li>Expand to 750+ integrations</li>
+          <li>Launch mobile app (iOS/Android)</li>
+          <li>SOC 2 Type II certification</li>
+          <li>Seed funding round ($1.5M)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="growth-card">
+      <div class="growth-head">Mid Term · 12–36 Months</div>
+      <div class="growth-body">
+        <ul>
+          <li>EMEA &amp; APAC expansion</li>
+          <li>AI-assisted workflow suggestions</li>
+          <li>Vertical templates (healthcare, finance)</li>
+          <li>Partner &amp; reseller program</li>
+          <li>Series A funding ($8M target)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="growth-card">
+      <div class="growth-head">Long Term · 36+ Months</div>
+      <div class="growth-body">
+        <ul>
+          <li>Marketplace for workflow templates</li>
+          <li>On-premise &amp; private cloud options</li>
+          <li>AI agent automation layer</li>
+          <li>IPO / strategic acquisition readiness</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sub-h">10.1 Technical Scalability</h2>
+  <table class="tbl no-break">
+    <tr><th>Layer</th><th>Scaling Strategy</th></tr>
+    <tr><td><strong>Application</strong></td><td>Horizontal auto-scaling of API servers on AWS ECS; Kubernetes for container orchestration at scale</td></tr>
+    <tr><td><strong>Queue / Workers</strong></td><td>Redis + BullMQ worker clusters scale per workflow volume; partition queues by customer tier</td></tr>
+    <tr><td><strong>Database</strong></td><td>PostgreSQL read replicas for analytics queries; connection pooling via PgBouncer</td></tr>
+    <tr><td><strong>Multi-tenancy</strong></td><td>Schema-per-tenant isolation ensures data security and performance predictability</td></tr>
+  </table>
+
+  <div class="info-box">
+    <p><strong>Website:</strong> The FlowForge website is live and publicly accessible at <a href="https://flowforge-website-orpin.vercel.app"><strong>https://flowforge-website-orpin.vercel.app</strong></a>. It includes the Home, Services, About (with team members), and Contact pages — all hosted on Vercel with automatic CI/CD from GitHub.</p>
+  </div>
+</div>
+
+</body>
+</html>
