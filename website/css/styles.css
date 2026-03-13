@@ -654,25 +654,7 @@ main {
   cursor: pointer;
   font-family: inherit;
   letter-spacing: 0.01em;
-  position: relative;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.btn span,
-.btn > * {
-  position: relative;
-  z-index: 2;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity var(--transition);
-  z-index: 1;
+  text-decoration: none;
 }
 
 .btn:hover {
@@ -681,6 +663,7 @@ main {
 
 .btn:active {
   transform: translateY(0);
+  filter: brightness(0.92);
 }
 
 .btn:focus-visible {
@@ -690,20 +673,13 @@ main {
 
 .btn-primary {
   background: var(--gradient-accent);
-  color: white;
+  color: white !important;
   box-shadow: 0 4px 20px var(--color-accent-glow);
 }
 
 .btn-primary:hover {
   box-shadow: 0 8px 30px rgba(13, 148, 136, 0.45);
-}
-
-.btn-primary::before {
-  background: linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 50%);
-}
-
-.btn-primary:hover::before {
-  opacity: 1;
+  filter: brightness(1.08);
 }
 
 .btn-secondary {
