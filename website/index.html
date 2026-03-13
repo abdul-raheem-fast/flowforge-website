@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="FlowForge - Workflow automation platform that connects your tools and eliminates manual tasks. Built for teams that move fast.">
+  <meta name="description" content="FlowForge — Workflow automation platform that connects your tools, eliminates manual tasks, and helps teams scale without code.">
   <title>FlowForge | Streamline. Automate. Scale.</title>
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
   <link rel="stylesheet" href="css/styles.css">
@@ -19,9 +19,7 @@
         <img src="assets/logo.svg" alt="FlowForge" width="140" height="36">
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="nav-menu" role="menubar">
         <li role="none"><a href="index.html" role="menuitem" aria-current="page">Home</a></li>
@@ -33,7 +31,8 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <!-- ===== Hero Section ===== -->
+
+    <!-- ===== Hero ===== -->
     <section class="hero hero-light" aria-labelledby="hero-heading">
       <div class="hero-inner">
         <div class="hero-content">
@@ -52,19 +51,17 @@
           <div class="hero-card" aria-hidden="true">
             <div class="flow-preview">
               <div class="browser-bar">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                <span class="dot"></span>
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
                 <span class="bar-title">workflow.editor</span>
               </div>
               <div class="workflow-mockup">
                 <div class="flow-block flow-trigger">
-                  <span class="flow-icon">→</span>
+                  <span class="flow-icon">⚡</span>
                   <span>New ticket</span>
                 </div>
                 <div class="flow-arrow"></div>
                 <div class="flow-block flow-action">
-                  <span class="flow-icon">⚡</span>
+                  <span class="flow-icon">🔀</span>
                   <span>Auto-assign</span>
                 </div>
                 <div class="flow-arrow"></div>
@@ -84,20 +81,19 @@
       <div class="container">
         <p class="trusted-label">Trusted by forward-thinking teams</p>
         <div class="trusted-logos">
-          <span>Stripe</span>
-          <span>Notion</span>
-          <span>Figma</span>
-          <span>Linear</span>
-          <span>Vercel</span>
+          <span>Stripe</span><span>Notion</span><span>Figma</span><span>Linear</span><span>Vercel</span>
         </div>
       </div>
     </section>
 
-    <!-- ===== Why FlowForge ===== -->
+    <!-- ===== Stats / Why FlowForge ===== -->
     <section class="intro" aria-labelledby="intro-heading">
       <div class="container">
-        <h2 id="intro-heading" class="animate-on-scroll">Why FlowForge</h2>
-        <p class="intro-text animate-on-scroll">We help growing teams cut through operational noise. Our platform integrates with your existing stack—CRM, support, billing, and more—so you automate workflows without changing how you work.</p>
+        <div class="intro-header animate-on-scroll">
+          <span class="eyebrow">Why FlowForge</span>
+          <h2 id="intro-heading">Automation that pays for itself</h2>
+          <p class="intro-text">We help growing teams cut through operational noise. Our platform integrates with your existing stack — CRM, support, billing, and more — so you automate workflows without changing how you work.</p>
+        </div>
         <div class="intro-stats stagger-children">
           <div class="stat animate-on-scroll">
             <span class="stat-value">500+</span>
@@ -105,28 +101,58 @@
           </div>
           <div class="stat animate-on-scroll">
             <span class="stat-value">99.9%</span>
-            <span class="stat-label">Uptime</span>
+            <span class="stat-label">Uptime SLA</span>
+          </div>
+          <div class="stat animate-on-scroll">
+            <span class="stat-value">10x</span>
+            <span class="stat-label">Faster Ops</span>
           </div>
           <div class="stat animate-on-scroll">
             <span class="stat-value">24/7</span>
-            <span class="stat-label">Support</span>
+            <span class="stat-label">Monitoring</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== Key Features ===== -->
+    <!-- ===== How It Works ===== -->
+    <section class="how-section" aria-labelledby="how-heading">
+      <div class="container">
+        <span class="eyebrow animate-on-scroll">How it works</span>
+        <h2 id="how-heading" class="animate-on-scroll">Three steps to full automation</h2>
+        <div class="how-grid stagger-children">
+          <div class="how-step animate-on-scroll">
+            <div class="how-num">01</div>
+            <h3>Connect your tools</h3>
+            <p>Pick from 500+ pre-built connectors or use our REST API. One-click OAuth for Salesforce, Slack, Zendesk, QuickBooks, and more.</p>
+          </div>
+          <div class="how-step animate-on-scroll">
+            <div class="how-num">02</div>
+            <h3>Build your workflow</h3>
+            <p>Use the visual drag-and-drop editor to design triggers, conditions, and multi-step actions. No code required.</p>
+          </div>
+          <div class="how-step animate-on-scroll">
+            <div class="how-num">03</div>
+            <h3>Deploy and scale</h3>
+            <p>Activate with one click. Monitor runs in real time, get alerts on failures, and scale to millions of executions with zero changes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Features ===== -->
     <section class="features-section" aria-labelledby="features-heading">
       <div class="container">
+        <span class="eyebrow animate-on-scroll">Platform</span>
         <h2 id="features-heading" class="animate-on-scroll">Everything you need to automate</h2>
         <p class="features-subtitle animate-on-scroll">From simple integrations to complex multi-step workflows, FlowForge handles it all.</p>
         <div class="features-grid stagger-children">
           <article class="feature-card animate-on-scroll">
             <div class="feature-icon" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 17h7m-3-3v6"/></svg>
             </div>
             <h3>Visual Workflow Builder</h3>
-            <p>Drag-and-drop interface to design complex automation flows. No coding required — just connect, configure, and deploy.</p>
+            <p>Drag-and-drop interface to design complex automation flows. No coding required — connect, configure, and deploy in minutes.</p>
           </article>
           <article class="feature-card animate-on-scroll">
             <div class="feature-icon" aria-hidden="true">
@@ -140,8 +166,74 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
             <h3>Enterprise-Grade Security</h3>
-            <p>SOC 2 compliant infrastructure with end-to-end encryption, role-based access control, and detailed audit logs.</p>
+            <p>SOC 2 compliant with end-to-end encryption, role-based access control, OAuth 2.0, and detailed audit logs.</p>
           </article>
+          <article class="feature-card animate-on-scroll">
+            <div class="feature-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Real-Time Monitoring</h3>
+            <p>Live execution logs, instant failure alerts, and a full run history so you always know what's happening across your workflows.</p>
+          </article>
+          <article class="feature-card animate-on-scroll">
+            <div class="feature-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3>Instant Deployment</h3>
+            <p>One-click activation with automatic retry, backoff, and error-handling built in. Zero downtime deploys for workflow updates.</p>
+          </article>
+          <article class="feature-card animate-on-scroll">
+            <div class="feature-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Team Collaboration</h3>
+            <p>Role-based permissions for every workflow. Share, comment, and review automation changes together as a team.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Pricing Teaser ===== -->
+    <section class="pricing-section" aria-labelledby="pricing-heading">
+      <div class="container">
+        <span class="eyebrow animate-on-scroll">Pricing</span>
+        <h2 id="pricing-heading" class="animate-on-scroll">Simple, transparent plans</h2>
+        <p class="features-subtitle animate-on-scroll">Start free. Scale as you grow. No surprise charges.</p>
+        <div class="pricing-grid stagger-children">
+          <div class="pricing-card animate-on-scroll">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$99<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>✓ 5 workflows</li>
+              <li>✓ 3 integrations</li>
+              <li>✓ Community support</li>
+              <li>✓ 10k runs/month</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline">Get Started</a>
+          </div>
+          <div class="pricing-card pricing-card--featured animate-on-scroll">
+            <div class="plan-badge">Most Popular</div>
+            <div class="plan-name">Growth</div>
+            <div class="plan-price">$299<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>✓ 25 workflows</li>
+              <li>✓ 15 integrations</li>
+              <li>✓ Email support</li>
+              <li>✓ 100k runs/month</li>
+            </ul>
+            <a href="contact.html" class="btn btn-primary">Get Started</a>
+          </div>
+          <div class="pricing-card animate-on-scroll">
+            <div class="plan-name">Scale</div>
+            <div class="plan-price">$799<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>✓ Unlimited workflows</li>
+              <li>✓ All integrations</li>
+              <li>✓ Priority support</li>
+              <li>✓ Unlimited runs</li>
+            </ul>
+            <a href="contact.html" class="btn btn-outline">Get Started</a>
+          </div>
         </div>
       </div>
     </section>
@@ -151,9 +243,13 @@
       <div class="container">
         <h2 id="cta-heading" class="animate-on-scroll">Ready to simplify your operations?</h2>
         <p class="animate-on-scroll">Schedule a demo or reach out with questions. Our team responds within one business day.</p>
-        <a href="contact.html" class="btn btn-primary animate-on-scroll">Contact Us</a>
+        <div class="cta-actions animate-on-scroll">
+          <a href="contact.html" class="btn btn-primary">Contact Us</a>
+          <a href="services.html" class="btn btn-secondary">View Services →</a>
+        </div>
       </div>
     </section>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -169,7 +265,7 @@
           <a href="contact.html">Contact</a>
         </div>
       </div>
-      <p class="footer-copy">&copy; 2025 FlowForge. All rights reserved.</p>
+      <p class="footer-copy">&copy; 2025 FlowForge. Built by BCS-6J · FAST-NUCES Lahore.</p>
     </div>
   </footer>
 
