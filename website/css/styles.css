@@ -1614,7 +1614,7 @@ main {
   font-family: var(--font-serif);
   font-size: 3.5rem;
   font-weight: 700;
-  color: rgba(13, 148, 136, 0.12);
+  color: #0d9488;
   line-height: 1;
   margin-bottom: var(--space-md);
   letter-spacing: -0.04em;
